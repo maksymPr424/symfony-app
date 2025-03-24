@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}My Application{% endblock %}</title>
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+    </head>
+    <body>
+        {% block body %}
+            <main id="content">
+                {% block sidebar %}
+                <div class='sidebar'>
+                    <ul class='sidebar_list'>
+                        <li><a class='sidebar_link' href="{{ path('lucky') }}">Lucky</a></li>
+                        <li><a class='sidebar_link' href="{{ path('blog') }}">Blog</a></li>
+                    </ul>
+                </div>
+                {% endblock %}
+                <div class='main_content'>{% block content %}{% endblock %}</div>
+            </main>
+        {% endblock %}
+    </body>
+</html>

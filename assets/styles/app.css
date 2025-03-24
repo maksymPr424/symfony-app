@@ -1,0 +1,60 @@
+h1 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  background-color: skyblue;
+  margin: 0;
+}
+
+main {
+  display: flex;
+  gap: 20px;
+}
+
+.sidebar {
+  background-color: gray;
+  padding: 10px;
+  height: 100vh;
+  min-width: 140px;
+}
+
+.sidebar_list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0;
+}
+
+.sidebar_link {
+  text-decoration: none;
+  color: #fff;
+  font-size: 18px;
+}
+
+.sidebar_link:hover {
+  color: lightblue;
+}
+
+.main_content {
+  padding: 15px;
+}
+
+.blog_content {
+}
+
+.back_link {
+  text-decoration: none;
+  color: gray;
+}
+
+.back_link:hover {
+  color: #000;
+}
