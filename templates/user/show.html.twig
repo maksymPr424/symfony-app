@@ -23,6 +23,12 @@
                 <th>Email</th>
                 <td>{{ user.Email }}</td>
             </tr>
+            {% if user.category %} 
+            <tr>
+                <th>Category</th>
+                <td>{{ user.category | lower }}</td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 

@@ -18,6 +18,8 @@ return [
         '/blog/add' => [[['_route' => 'blog_add', '_controller' => 'App\\Controller\\AddBlogController::index'], null, ['POST' => 0], null, false, false, null]],
         '/' => [[['_route' => 'homepage', '_controller' => 'App\\Controller\\BaseController::index'], null, null, null, false, false, null]],
         '/blog' => [[['_route' => 'blog', '_controller' => 'App\\Controller\\BlogController::index'], null, null, null, false, false, null]],
+        '/category' => [[['_route' => 'app_category_index', '_controller' => 'App\\Controller\\CategoryController::index'], null, ['GET' => 0], null, false, false, null]],
+        '/category/new' => [[['_route' => 'app_category_new', '_controller' => 'App\\Controller\\CategoryController::new'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
         '/delicious/gnome' => [[['_route' => 'app_delicious_gnome', '_controller' => 'App\\Controller\\DeliciousGnomeController::index'], null, null, null, false, false, null]],
         '/lucky/number' => [[['_route' => 'lucky', '_controller' => 'App\\Controller\\LuckyController::number'], null, null, null, false, false, null]],
         '/product' => [[['_route' => 'create_product', '_controller' => 'App\\Controller\\ProductController::createProduct'], null, null, null, false, false, null]],
@@ -45,10 +47,15 @@ return [
                     .')'
                 .')'
                 .'|/blog/([^/]++)(*:216)'
+                .'|/category/([^/]++)(?'
+                    .'|(*:245)'
+                    .'|/edit(*:258)'
+                    .'|(*:266)'
+                .')'
                 .'|/user/([^/]++)(?'
-                    .'|(*:241)'
-                    .'|/edit(*:254)'
-                    .'|(*:262)'
+                    .'|(*:292)'
+                    .'|/edit(*:305)'
+                    .'|(*:313)'
                 .')'
             .')/?$}sDu',
     ],
@@ -62,9 +69,12 @@ return [
         181 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         191 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         216 => [[['_route' => 'blog_show', '_controller' => 'App\\Controller\\BlogController::show'], ['id'], null, null, false, true, null]],
-        241 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
-        254 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        262 => [
+        245 => [[['_route' => 'app_category_show', '_controller' => 'App\\Controller\\CategoryController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        258 => [[['_route' => 'app_category_edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        266 => [[['_route' => 'app_category_delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], ['POST' => 0], null, false, true, null]],
+        292 => [[['_route' => 'app_user_show', '_controller' => 'App\\Controller\\UserController::show'], ['id'], ['GET' => 0], null, false, true, null]],
+        305 => [[['_route' => 'app_user_edit', '_controller' => 'App\\Controller\\UserController::edit'], ['id'], ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        313 => [
             [['_route' => 'app_user_delete', '_controller' => 'App\\Controller\\UserController::delete'], ['id'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

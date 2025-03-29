@@ -129,21 +129,35 @@ class __TwigTemplate_a804e7ed83b88e6b52bf3e52c1ae3ff8 extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 24, $this->source); })()), "Email", [], "any", false, false, false, 24), "html", null, true);
         yield "</td>
             </tr>
-        </tbody>
+            ";
+        // line 26
+        if (CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 26, $this->source); })()), "category", [], "any", false, false, false, 26)) {
+            yield " 
+            <tr>
+                <th>Category</th>
+                <td>";
+            // line 29
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "category", [], "any", false, false, false, 29), "html", null, true);
+            yield "</td>
+            </tr>
+            ";
+        }
+        // line 32
+        yield "        </tbody>
     </table>
 
     <a href=\"";
-        // line 29
+        // line 35
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
         yield "\">back to list</a>
 
     <a href=\"";
-        // line 31
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 31, $this->source); })()), "id", [], "any", false, false, false, 31)]), "html", null, true);
+        // line 37
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 37, $this->source); })()), "id", [], "any", false, false, false, 37)]), "html", null, true);
         yield "\">edit</a>
 
     ";
-        // line 33
+        // line 39
         yield Twig\Extension\CoreExtension::include($this->env, $context, "user/_delete_form.html.twig");
         yield "
 ";
@@ -177,7 +191,7 @@ class __TwigTemplate_a804e7ed83b88e6b52bf3e52c1ae3ff8 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  147 => 33,  142 => 31,  137 => 29,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  161 => 39,  156 => 37,  151 => 35,  146 => 32,  140 => 29,  134 => 26,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -207,6 +221,12 @@ class __TwigTemplate_a804e7ed83b88e6b52bf3e52c1ae3ff8 extends Template
                 <th>Email</th>
                 <td>{{ user.Email }}</td>
             </tr>
+            {% if user.category %} 
+            <tr>
+                <th>Category</th>
+                <td>{{ user.category  }}</td>
+            </tr>
+            {% endif %}
         </tbody>
     </table>
 
