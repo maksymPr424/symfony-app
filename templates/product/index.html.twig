@@ -4,6 +4,12 @@
 {% block body %}
     <h1>Product index</h1>
 
+    {{ form_start(searchForm) }}
+    {{ form_widget(searchForm) }}
+        <button class="btn">{{ button_label|default('Search') }}</button>
+    {{ form_end(searchForm) }}
+    <br />
+
     <table class="table">
         <thead>
             <tr>

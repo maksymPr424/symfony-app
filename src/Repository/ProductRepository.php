@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Product;
+use App\Filter\ProductFilter;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -16,6 +17,16 @@ class ProductRepository extends ServiceEntityRepository
         parent::__construct($registry, Product::class);
     }
 
+    public function findByProductFilter(ProductFilter $productFilter) {
+
+        $products = $this->createQueryBuilder('b');
+
+        if ($productFilter->getName()) {
+            $products->where('b.name LIKE :name')->setParameter('name', '%' . $productFilter->getName() . '%');
+        }
+
+        return $products->getQuery()->getResult();
+    }
 //    /**
 //     * @return Product[] Returns an array of Product objects
 //     */

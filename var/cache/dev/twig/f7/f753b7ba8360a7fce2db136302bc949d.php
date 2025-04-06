@@ -99,6 +99,24 @@ class __TwigTemplate_fa0aab8b52afb3cbd74366577cc0f8b9 extends Template
         // line 5
         yield "    <h1>Product index</h1>
 
+    ";
+        // line 7
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 7, $this->source); })()), 'form_start');
+        yield "
+    ";
+        // line 8
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 8, $this->source); })()), 'widget');
+        yield "
+        <button class=\"btn\">";
+        // line 9
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(((array_key_exists("button_label", $context)) ? (Twig\Extension\CoreExtension::default((isset($context["button_label"]) || array_key_exists("button_label", $context) ? $context["button_label"] : (function () { throw new RuntimeError('Variable "button_label" does not exist.', 9, $this->source); })()), "Search")) : ("Search")), "html", null, true);
+        yield "</button>
+    ";
+        // line 10
+        yield         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["searchForm"]) || array_key_exists("searchForm", $context) ? $context["searchForm"] : (function () { throw new RuntimeError('Variable "searchForm" does not exist.', 10, $this->source); })()), 'form_end');
+        yield "
+    <br />
+
     <table class=\"table\">
         <thead>
             <tr>
@@ -112,50 +130,50 @@ class __TwigTemplate_fa0aab8b52afb3cbd74366577cc0f8b9 extends Template
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 25
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 25, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 20
+            // line 26
             yield "            <tr>
                 <td>";
-            // line 21
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 21), "html", null, true);
+            // line 27
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 27), "html", null, true);
             yield "</td>
                 <td>";
-            // line 22
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 22), "html", null, true);
+            // line 28
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "name", [], "any", false, false, false, 28), "html", null, true);
             yield "</td>
                 <td>";
-            // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 23), "html", null, true);
+            // line 29
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "price", [], "any", false, false, false, 29), "html", null, true);
             yield "</td>
                 <td>";
-            // line 24
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "description", [], "any", false, false, false, 24), "html", null, true);
+            // line 30
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "description", [], "any", false, false, false, 30), "html", null, true);
             yield "</td>
                 <td>";
-            // line 25
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "category", [], "any", false, false, false, 25), "html", null, true);
+            // line 31
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["product"], "category", [], "any", false, false, false, 31), "html", null, true);
             yield "</td>
                 <td>
                     <a href=\"";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 27)]), "html", null, true);
+            // line 33
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 33)]), "html", null, true);
             yield "\">show</a>
                     <a href=\"";
-            // line 28
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 28)]), "html", null, true);
+            // line 34
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             yield "\">edit</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 31
+        // line 37
         if (!$context['_iterated']) {
-            // line 32
+            // line 38
             yield "            <tr>
                 <td colspan=\"5\">no records found</td>
             </tr>
@@ -164,12 +182,12 @@ class __TwigTemplate_fa0aab8b52afb3cbd74366577cc0f8b9 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['product'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 36
+        // line 42
         yield "        </tbody>
     </table>
 
     <a href=\"";
-        // line 39
+        // line 45
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_new");
         yield "\">Create new</a>
 ";
@@ -203,7 +221,7 @@ class __TwigTemplate_fa0aab8b52afb3cbd74366577cc0f8b9 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  173 => 39,  168 => 36,  159 => 32,  157 => 31,  149 => 28,  145 => 27,  140 => 25,  136 => 24,  132 => 23,  128 => 22,  124 => 21,  121 => 20,  116 => 19,  100 => 5,  87 => 4,  64 => 2,  41 => 1,);
+        return array (  191 => 45,  186 => 42,  177 => 38,  175 => 37,  167 => 34,  163 => 33,  158 => 31,  154 => 30,  150 => 29,  146 => 28,  142 => 27,  139 => 26,  134 => 25,  116 => 10,  112 => 9,  108 => 8,  104 => 7,  100 => 5,  87 => 4,  64 => 2,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -213,6 +231,12 @@ class __TwigTemplate_fa0aab8b52afb3cbd74366577cc0f8b9 extends Template
 
 {% block body %}
     <h1>Product index</h1>
+
+    {{ form_start(searchForm) }}
+    {{ form_widget(searchForm) }}
+        <button class=\"btn\">{{ button_label|default('Search') }}</button>
+    {{ form_end(searchForm) }}
+    <br />
 
     <table class=\"table\">
         <thead>

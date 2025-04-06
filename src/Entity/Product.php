@@ -8,6 +8,8 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\PersistentCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
@@ -17,17 +19,21 @@ class Product
     #[ORM\Column]
     private ?int $id = null;
 
+    #[Assert\NotBlank(message: 'Name have to be!')]
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
     #[ORM\Column]
+    #[Assert\NotBlank]
     private ?int $price = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Assert\NotBlank]
     private ?string $description = null;
 
     #[ORM\ManyToOne(inversedBy: 'products')]
     #[ORM\JoinColumn(nullable: false)]
+    #[Assert\NotBlank]
     private ?Category $category = null;
 
 

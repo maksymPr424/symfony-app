@@ -418,12 +418,16 @@
         <argument type="service" id=".service_locator.ZyP9f7K.App\Controller\UserController"/>
       </call>
     </service>
+    <service id="App\Filter\ProductFilter" class="App\Filter\ProductFilter" autowire="true" autoconfigure="true"/>
     <service id="App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
     <service id="App\Form\DataTransformer\TagTransformer" class="App\Form\DataTransformer\TagTransformer" autowire="true" autoconfigure="true">
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument type="service" id="App\Repository\TagRepository"/>
+    </service>
+    <service id="App\Form\ProductFilterType" class="App\Form\ProductFilterType" autowire="true" autoconfigure="true">
+      <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
     </service>
     <service id="App\Form\ProductType" class="App\Form\ProductType" autowire="true" autoconfigure="true">
       <tag name="form.type" csrf_token_id="%.form.type_extension.csrf.token_id%"/>
@@ -1440,6 +1444,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\CategoryType</argument>
+        <argument>App\Form\ProductFilterType</argument>
         <argument>App\Form\ProductType</argument>
         <argument>App\Form\UserType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -4048,7 +4053,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.TKxsJw4"/>
+      <argument type="service" id=".service_locator.f6_eX2M"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4147,6 +4152,7 @@
       <argument>%form.type_extension.csrf.field_attr%</argument>
       <argument type="collection">
         <argument key="App\Form\CategoryType">submit</argument>
+        <argument key="App\Form\ProductFilterType">submit</argument>
         <argument key="App\Form\ProductType">submit</argument>
         <argument key="App\Form\UserType">submit</argument>
       </argument>
@@ -7488,6 +7494,8 @@
     <service id=".abstract.instanceof.App\Controller\UserController" class="App\Controller\UserController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\CategoryType" class="App\Form\CategoryType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProductFilterType" class="App\Form\ProductFilterType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\ProductFilterType" class="App\Form\ProductFilterType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\ProductType" class="App\Form\ProductType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\ProductType" class="App\Form\ProductType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserType" class="App\Form\UserType" autowire="true" abstract="true"/>
@@ -8389,10 +8397,11 @@
       <argument type="service" id="argument_resolver.query_parameter_value_resolver"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.TKxsJw4" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.f6_eX2M" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\CategoryType" type="service_closure" id="App\Form\CategoryType"/>
+        <argument key="App\Form\ProductFilterType" type="service_closure" id="App\Form\ProductFilterType"/>
         <argument key="App\Form\ProductType" type="service_closure" id="App\Form\ProductType"/>
         <argument key="App\Form\UserType" type="service_closure" id="App\Form\UserType"/>
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service_closure" id="form.type.form"/>

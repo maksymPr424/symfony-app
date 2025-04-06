@@ -47,9 +47,9 @@ class TagTransformer implements DataTransformerInterface
         $tags = new ArrayCollection();
 
         foreach ($items as $item) {
-            $tag = $this->tagRepository->findOneBy(['name' => $item->strtolower()]);
+            $tag = $this->tagRepository->findOneBy(['name' => strtolower($item)]);
             if (!$tag) {
-                $tag = (new Tag())->setName($item->strtolower());
+                $tag = (new Tag())->setName(strtolower($item));
             }
             
             $tags->add($tag);
