@@ -137,7 +137,7 @@ class __TwigTemplate_a804e7ed83b88e6b52bf3e52c1ae3ff8 extends Template
                 <th>Category</th>
                 <td>";
             // line 29
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "category", [], "any", false, false, false, 29), "html", null, true);
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::lower($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 29, $this->source); })()), "category", [], "any", false, false, false, 29)), "html", null, true);
             yield "</td>
             </tr>
             ";
@@ -224,7 +224,7 @@ class __TwigTemplate_a804e7ed83b88e6b52bf3e52c1ae3ff8 extends Template
             {% if user.category %} 
             <tr>
                 <th>Category</th>
-                <td>{{ user.category  }}</td>
+                <td>{{ user.category | lower }}</td>
             </tr>
             {% endif %}
         </tbody>

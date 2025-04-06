@@ -8,11 +8,9 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class DeliciousGnomeController extends AbstractController
 {
-    #[Route('/delicious/gnome', name: 'app_delicious_gnome')]
+    #[Route('/gnome', name: 'app_delicious_gnome')]
     public function index(): Response
     {
-        return $this->render('delicious_gnome/index.html.twig', [
-            'controller_name' => 'DeliciousGnomeController',
-        ]);
+        return $this->render('base.html.twig');
     }
 }

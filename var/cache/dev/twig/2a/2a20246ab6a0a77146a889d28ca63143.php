@@ -14,7 +14,7 @@ use Twig\Source;
 use Twig\Template;
 use Twig\TemplateWrapper;
 
-/* base.html.twig */
+/* /base.html.twig */
 class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
 {
     private Source $source;
@@ -43,10 +43,10 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/base.html.twig"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base.html.twig"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "/base.html.twig"));
 
         // line 1
         yield "<html>
@@ -65,7 +65,7 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
         ";
         // line 8
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 21
+        // line 24
         yield "    </body>
 </html>
 ";
@@ -119,7 +119,7 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
                 ";
         // line 10
         yield from $this->unwrap()->yieldBlock('sidebar', $context, $blocks);
-        // line 18
+        // line 21
         yield "                <div class='main_content'>";
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
         yield "</div>
@@ -158,6 +158,18 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
         // line 14
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("blog");
         yield "\">Blog</a></li>
+                        <li><a class='sidebar_link' href=\"";
+        // line 15
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
+        yield "\">User</a></li>
+                        <li><a class='sidebar_link' href=\"";
+        // line 16
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_index");
+        yield "\">Categories</a></li>
+                        <li><a class='sidebar_link' href=\"";
+        // line 17
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_index");
+        yield "\">Products</a></li>
                     </ul>
                 </div>
                 ";
@@ -170,7 +182,7 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
         yield from [];
     }
 
-    // line 18
+    // line 21
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -197,7 +209,7 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
      */
     public function getTemplateName(): string
     {
-        return "base.html.twig";
+        return "/base.html.twig";
     }
 
     /**
@@ -213,7 +225,7 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  174 => 18,  159 => 14,  155 => 13,  151 => 11,  138 => 10,  123 => 18,  121 => 10,  118 => 9,  105 => 8,  82 => 4,  69 => 21,  67 => 8,  61 => 5,  57 => 4,  52 => 1,);
+        return array (  186 => 21,  171 => 17,  167 => 16,  163 => 15,  159 => 14,  155 => 13,  151 => 11,  138 => 10,  123 => 21,  121 => 10,  118 => 9,  105 => 8,  82 => 4,  69 => 24,  67 => 8,  61 => 5,  57 => 4,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -232,6 +244,9 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
                     <ul class='sidebar_list'>
                         <li><a class='sidebar_link' href=\"{{ path('lucky') }}\">Lucky</a></li>
                         <li><a class='sidebar_link' href=\"{{ path('blog') }}\">Blog</a></li>
+                        <li><a class='sidebar_link' href=\"{{ path('app_user_index') }}\">User</a></li>
+                        <li><a class='sidebar_link' href=\"{{ path('app_category_index') }}\">Categories</a></li>
+                        <li><a class='sidebar_link' href=\"{{ path('app_product_index') }}\">Products</a></li>
                     </ul>
                 </div>
                 {% endblock %}
@@ -240,6 +255,6 @@ class __TwigTemplate_0abf6edd4ab95ae3404526413cd3a4aa extends Template
         {% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/maksym/Documents/GitHub/symfony-app/templates/base.html.twig");
+", "/base.html.twig", "/home/maksym/Documents/GitHub/symfony-app/templates/base.html.twig");
     }
 }
