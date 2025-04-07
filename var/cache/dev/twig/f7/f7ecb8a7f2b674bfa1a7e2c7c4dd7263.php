@@ -65,7 +65,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
         ";
         // line 8
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 24
+        // line 23
         yield "    </body>
 </html>
 ";
@@ -119,7 +119,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
                 ";
         // line 10
         yield from $this->unwrap()->yieldBlock('sidebar', $context, $blocks);
-        // line 21
+        // line 20
         yield "                <div class='main_content'>";
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
         yield "</div>
@@ -160,14 +160,10 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
         yield "\">Blog</a></li>
                         <li><a class='sidebar_link' href=\"";
         // line 15
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_index");
-        yield "\">User</a></li>
-                        <li><a class='sidebar_link' href=\"";
-        // line 16
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_index");
         yield "\">Categories</a></li>
                         <li><a class='sidebar_link' href=\"";
-        // line 17
+        // line 16
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_index");
         yield "\">Products</a></li>
                     </ul>
@@ -182,7 +178,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
         yield from [];
     }
 
-    // line 21
+    // line 20
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -225,7 +221,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  186 => 21,  171 => 17,  167 => 16,  163 => 15,  159 => 14,  155 => 13,  151 => 11,  138 => 10,  123 => 21,  121 => 10,  118 => 9,  105 => 8,  82 => 4,  69 => 24,  67 => 8,  61 => 5,  57 => 4,  52 => 1,);
+        return array (  182 => 20,  167 => 16,  163 => 15,  159 => 14,  155 => 13,  151 => 11,  138 => 10,  123 => 20,  121 => 10,  118 => 9,  105 => 8,  82 => 4,  69 => 23,  67 => 8,  61 => 5,  57 => 4,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -244,7 +240,6 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
                     <ul class='sidebar_list'>
                         <li><a class='sidebar_link' href=\"{{ path('lucky') }}\">Lucky</a></li>
                         <li><a class='sidebar_link' href=\"{{ path('blog') }}\">Blog</a></li>
-                        <li><a class='sidebar_link' href=\"{{ path('app_user_index') }}\">User</a></li>
                         <li><a class='sidebar_link' href=\"{{ path('app_category_index') }}\">Categories</a></li>
                         <li><a class='sidebar_link' href=\"{{ path('app_product_index') }}\">Products</a></li>
                     </ul>
