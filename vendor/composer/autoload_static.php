@@ -118,6 +118,7 @@ class ComposerStaticIniteaa614d3c00b5654c4cc228dcad4b8c8
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'SymfonyCasts\\Bundle\\VerifyEmail\\' => 32,
         ),
         'P' => 
         array (
@@ -482,6 +483,10 @@ class ComposerStaticIniteaa614d3c00b5654c4cc228dcad4b8c8
         'Symfony\\Bridge\\Doctrine\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
+        ),
+        'SymfonyCasts\\Bundle\\VerifyEmail\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfonycasts/verify-email-bundle/src',
         ),
         'Psr\\Log\\' => 
         array (

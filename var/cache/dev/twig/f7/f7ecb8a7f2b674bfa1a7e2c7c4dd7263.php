@@ -65,7 +65,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
         ";
         // line 8
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 23
+        // line 25
         yield "    </body>
 </html>
 ";
@@ -119,7 +119,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
                 ";
         // line 10
         yield from $this->unwrap()->yieldBlock('sidebar', $context, $blocks);
-        // line 20
+        // line 22
         yield "                <div class='main_content'>";
         yield from $this->unwrap()->yieldBlock('content', $context, $blocks);
         yield "</div>
@@ -166,6 +166,14 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
         // line 16
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_index");
         yield "\">Products</a></li>
+                        <li><a class='sidebar_link' href=\"";
+        // line 17
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_user_index");
+        yield "\">Users</a></li>
+                        <li><a class='sidebar_link' href=\"";
+        // line 18
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("_logout_main");
+        yield "\">Logout</a></li>
                     </ul>
                 </div>
                 ";
@@ -178,7 +186,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
         yield from [];
     }
 
-    // line 20
+    // line 22
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -221,7 +229,7 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  182 => 20,  167 => 16,  163 => 15,  159 => 14,  155 => 13,  151 => 11,  138 => 10,  123 => 20,  121 => 10,  118 => 9,  105 => 8,  82 => 4,  69 => 23,  67 => 8,  61 => 5,  57 => 4,  52 => 1,);
+        return array (  190 => 22,  175 => 18,  171 => 17,  167 => 16,  163 => 15,  159 => 14,  155 => 13,  151 => 11,  138 => 10,  123 => 22,  121 => 10,  118 => 9,  105 => 8,  82 => 4,  69 => 25,  67 => 8,  61 => 5,  57 => 4,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -242,6 +250,8 @@ class __TwigTemplate_17f1d64356f39aebd92f868d5531bd05 extends Template
                         <li><a class='sidebar_link' href=\"{{ path('blog') }}\">Blog</a></li>
                         <li><a class='sidebar_link' href=\"{{ path('app_category_index') }}\">Categories</a></li>
                         <li><a class='sidebar_link' href=\"{{ path('app_product_index') }}\">Products</a></li>
+                        <li><a class='sidebar_link' href=\"{{ url('app_user_index') }}\">Users</a></li>
+                        <li><a class='sidebar_link' href=\"{{ path('_logout_main') }}\">Logout</a></li>
                     </ul>
                 </div>
                 {% endblock %}
