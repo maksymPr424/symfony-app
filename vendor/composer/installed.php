@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '9a738b84e521ab477ab1f72676275e46bc578a88',
+        'reference' => '9baa009c8075619db732db7f316b35fbba291622',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '9a738b84e521ab477ab1f72676275e46bc578a88',
+            'reference' => '9baa009c8075619db732db7f316b35fbba291622',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1291,15 +1291,6 @@
             'install_path' => __DIR__ . '/../symfony/web-profiler-bundle',
             'aliases' => array(),
             'dev_requirement' => true,
-        ),
-        'symfony/webpack-encore-bundle' => array(
-            'pretty_version' => 'v2.2.0',
-            'version' => '2.2.0.0',
-            'reference' => 'e335394b68a775a9b2bd173a8ba4fd2001f3870c',
-            'type' => 'symfony-bundle',
-            'install_path' => __DIR__ . '/../symfony/webpack-encore-bundle',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'symfony/yaml' => array(
             'pretty_version' => 'v7.2.3',

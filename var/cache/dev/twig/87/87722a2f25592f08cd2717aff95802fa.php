@@ -31,7 +31,7 @@ class __TwigTemplate_4321ed8e99e4c5fa6c383efad84cc0ef extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -87,14 +87,14 @@ class __TwigTemplate_4321ed8e99e4c5fa6c383efad84cc0ef extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_body(array $context, array $blocks = []): iterable
+    public function block_content(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
         yield "    <h1>Product</h1>
@@ -136,21 +136,41 @@ class __TwigTemplate_4321ed8e99e4c5fa6c383efad84cc0ef extends Template
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::lower($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 28, $this->source); })()), "category", [], "any", false, false, false, 28)), "html", null, true);
         yield "</td>
             </tr>
+            <tr>
+                <th>Tags</th>
+                <td>
+                ";
+        // line 33
+        $context['_parent'] = $context;
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 33, $this->source); })()), "tag", [], "any", false, false, false, 33));
+        foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+            // line 34
+            yield "                    ";
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(Twig\Extension\CoreExtension::lower($this->env->getCharset(), CoreExtension::getAttribute($this->env, $this->source, $context["tag"], "name", [], "any", false, false, false, 34)), "html", null, true);
+            yield "
+                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_key'], $context['tag'], $context['_parent']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 36
+        yield "                </td>
+            </tr>
         </tbody>
     </table>
 
     <a href=\"";
-        // line 33
+        // line 41
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_index");
         yield "\">back to list</a>
 
     <a href=\"";
-        // line 35
-        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 35, $this->source); })()), "id", [], "any", false, false, false, 35)]), "html", null, true);
+        // line 43
+        yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 43, $this->source); })()), "id", [], "any", false, false, false, 43)]), "html", null, true);
         yield "\">edit</a>
 
     ";
-        // line 37
+        // line 45
         yield Twig\Extension\CoreExtension::include($this->env, $context, "product/_delete_form.html.twig");
         yield "
 ";
@@ -184,7 +204,7 @@ class __TwigTemplate_4321ed8e99e4c5fa6c383efad84cc0ef extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  154 => 37,  149 => 35,  144 => 33,  136 => 28,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  174 => 45,  169 => 43,  164 => 41,  157 => 36,  148 => 34,  144 => 33,  136 => 28,  129 => 24,  122 => 20,  115 => 16,  108 => 12,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -193,7 +213,7 @@ class __TwigTemplate_4321ed8e99e4c5fa6c383efad84cc0ef extends Template
 
 {% block title %}Product{% endblock %}
 
-{% block body %}
+{% block content %}
     <h1>Product</h1>
 
     <table class=\"table\">
@@ -217,6 +237,14 @@ class __TwigTemplate_4321ed8e99e4c5fa6c383efad84cc0ef extends Template
             <tr>
                 <th>Category</th>
                 <td>{{ product.category | lower }}</td>
+            </tr>
+            <tr>
+                <th>Tags</th>
+                <td>
+                {% for tag in product.tag %}
+                    {{ tag.name | lower }}
+                {% endfor %}
+                </td>
             </tr>
         </tbody>
     </table>

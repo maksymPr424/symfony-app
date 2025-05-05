@@ -10,12 +10,18 @@
                 {% block sidebar %}
                 <div class='sidebar'>
                     <ul class='sidebar_list'>
-                        <li><a class='sidebar_link' href="{{ path('lucky') }}">Lucky</a></li>
-                        <li><a class='sidebar_link' href="{{ path('blog') }}">Blog</a></li>
-                        <li><a class='sidebar_link' href="{{ path('app_category_index') }}">Categories</a></li>
-                        <li><a class='sidebar_link' href="{{ path('app_product_index') }}">Products</a></li>
-                        <li><a class='sidebar_link' href="{{ url('app_user_index') }}">Users</a></li>
-                        <li><a class='sidebar_link' href="{{ path('_logout_main') }}">Logout</a></li>
+                        {% if app.user %}
+                            {% if is_granted('ROLE_ADMIN') %}
+                                <li><a class='sidebar_link' href="{{ url('app_user_index') }}">Users</a></li>
+                                <li><a class='sidebar_link' href="{{ path('app_category_index') }}">Categories</a></li>
+                                <li><a class='sidebar_link' href="{{ path('app_product_index') }}">Products</a></li>
+                            {% endif %}
+
+                            <li><a class='sidebar_link' href="{{ path('_logout_main') }}">Logout</a></li>
+                        {% else %}
+                            <li><a class='sidebar_link' href="{{ url('app_login') }}">Login</a></li>
+                            <li><a class='sidebar_link' href="{{ url('app_register') }}">Register</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                 {% endblock %}

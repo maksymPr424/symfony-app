@@ -31,7 +31,7 @@ class __TwigTemplate_595b3c5b69ae0ffc877f542c4eff79d2 extends Template
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
-            'body' => [$this, 'block_body'],
+            'content' => [$this, 'block_content'],
         ];
     }
 
@@ -73,7 +73,7 @@ class __TwigTemplate_595b3c5b69ae0ffc877f542c4eff79d2 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        yield "User index";
+        yield "Users";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -87,86 +87,69 @@ class __TwigTemplate_595b3c5b69ae0ffc877f542c4eff79d2 extends Template
     /**
      * @return iterable<null|scalar|\Stringable>
      */
-    public function block_body(array $context, array $blocks = []): iterable
+    public function block_content(array $context, array $blocks = []): iterable
     {
         $macros = $this->macros;
         $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
         // line 6
-        yield "    <h1>User index</h1>
+        yield "    <h1>Users</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Password</th>
                 <th>Email</th>
                 <th>actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 17
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = CoreExtension::ensureTraversable((isset($context["users"]) || array_key_exists("users", $context) ? $context["users"] : (function () { throw new RuntimeError('Variable "users" does not exist.', 17, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["user"]) {
-            // line 20
+            // line 18
             yield "            <tr>
                 <td>";
-            // line 21
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 21), "html", null, true);
+            // line 19
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 19), "html", null, true);
             yield "</td>
                 <td>";
+            // line 20
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 20), "html", null, true);
+            yield "</td>
+                <td >
+                <a href=\"";
             // line 22
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "Name", [], "any", false, false, false, 22), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 23
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "Password", [], "any", false, false, false, 23), "html", null, true);
-            yield "</td>
-                <td>";
-            // line 24
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["user"], "Email", [], "any", false, false, false, 24), "html", null, true);
-            yield "</td>
-                <td>
-                    <a href=\"";
-            // line 26
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            yield "\">show</a>
-                    <a href=\"";
-            // line 27
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "id", [], "any", false, false, false, 27)]), "html", null, true);
-            yield "\">edit</a>
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getUrl("app_product_index", ["_switch_user" => CoreExtension::getAttribute($this->env, $this->source, $context["user"], "email", [], "any", false, false, false, 22)]), "html", null, true);
+            yield "\">Login as user</a>
                 </td>
+
             </tr>
         ";
             $context['_iterated'] = true;
         }
-        // line 30
+        // line 26
         if (!$context['_iterated']) {
-            // line 31
+            // line 27
             yield "            <tr>
-                <td colspan=\"5\">no records found</td>
+                <td colspan=\"3\">no records found</td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['user'], $context['_parent'], $context['_iterated']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 31
         yield "        </tbody>
     </table>
 
-    <a href=\"";
-        // line 38
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_user_new");
-        yield "\">Create new</a>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -198,24 +181,22 @@ class __TwigTemplate_595b3c5b69ae0ffc877f542c4eff79d2 extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  168 => 38,  163 => 35,  154 => 31,  152 => 30,  144 => 27,  140 => 26,  135 => 24,  131 => 23,  127 => 22,  123 => 21,  120 => 20,  115 => 19,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  150 => 31,  141 => 27,  139 => 26,  130 => 22,  125 => 20,  121 => 19,  118 => 18,  113 => 17,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}User index{% endblock %}
+{% block title %}Users{% endblock %}
 
-{% block body %}
-    <h1>User index</h1>
+{% block content %}
+    <h1>Users</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>Password</th>
                 <th>Email</th>
                 <th>actions</th>
             </tr>
@@ -224,23 +205,20 @@ class __TwigTemplate_595b3c5b69ae0ffc877f542c4eff79d2 extends Template
         {% for user in users %}
             <tr>
                 <td>{{ user.id }}</td>
-                <td>{{ user.Name }}</td>
-                <td>{{ user.Password }}</td>
-                <td>{{ user.Email }}</td>
-                <td>
-                    <a href=\"{{ path('app_user_show', {'id': user.id}) }}\">show</a>
-                    <a href=\"{{ path('app_user_edit', {'id': user.id}) }}\">edit</a>
+                <td>{{ user.email }}</td>
+                <td >
+                <a href=\"{{ url('app_product_index', {'_switch_user': user.email}) }}\">Login as user</a>
                 </td>
+
             </tr>
         {% else %}
             <tr>
-                <td colspan=\"5\">no records found</td>
+                <td colspan=\"3\">no records found</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_user_new') }}\">Create new</a>
 {% endblock %}
 ", "user/index.html.twig", "/home/maksym/Documents/GitHub/symfony-app/templates/user/index.html.twig");
     }
